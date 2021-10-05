@@ -3,35 +3,46 @@ var passLength = " ";
 var lowerCase = " ";
 var upperCase = " ";
 var numeric = " ";
-var symbols = " ";
+var symbolRandom = " ";
 
-
+const randomFunc = {
+  lower: getRandomLower,
+  upper: getRandomUpper,
+  number: getRandomNumber,
+  symbol: getRandomSymbol
+};
 
 
 function getRandomLower() {
-  
 var getRandomLower = String.fromCharCode(Math.floor(Math.random() * 26 + 97));
-console.log(getRandomLower);
 lowerCase = getRandomLower;
-console.log(lowerCase);
 return lowerCase;
 };
 
 
 
 function getRandomUpper() {
-  return String.fromCharCode(Math.floor(Math.random() * 26 + 65));
-
-}
+  var getRandomUpper = String.fromCharCode(Math.floor(Math.random() * 26 + 65));
+  upperCase = getRandomUpper;
+  return upperCase;
+};
 
 function getRandomNumber() {
-  return String.fromCharCode(Math.floor(Math.random() * 10 + 48));
-}
+  var getRandomNumber = String.fromCharCode(Math.floor(Math.random() * 10 + 48));
+  numeric = getRandomNumber;
+ return numeric; 
+};
 
 function getRandomSymbol() {
-  const symbols = '!@#$%^&*(){}[]=<>/,.'
-   return symbols[Math.floor(Math.random() * symbols.length)];
-} 
+  var symbolRandom = " ";
+  const symbols = "!@#$%^&*(){}[]=<>/,.";
+  
+  for (var i = 0; i < 5; i++)
+  symbolRandom += symbols.charAt(Math.floor(Math.random() * symbols.length));
+   symbolRandom = symbols;
+   console.log(symbolRandom);
+   return symbolRandom;
+} ;
 
 function passGen() {
   var promptPassGen = confirm("Would you like to generate a new password");
@@ -42,15 +53,18 @@ function passGen() {
     passLength = selectLength;
     return passLength;
  };
-
-
-
 };
 
 passGen();
-getRandomLower()
+getRandomLower();
+getRandomUpper();
+getRandomNumber();
+getRandomSymbol();
 //console.log(passLength);
 console.log(lowerCase);
+console.log(upperCase);
+console.log(numeric);
+console.log(symbolRandom);
 
 
 
