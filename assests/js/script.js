@@ -12,38 +12,39 @@ const randomFunc = {
   symbol: getRandomSymbol
 };
 
-
+// Generates a random lowercase character
 function getRandomLower() {
 var getRandomLower = String.fromCharCode(Math.floor(Math.random() * 26 + 97));
 lowerCase = getRandomLower;
 return lowerCase;
 };
 
-
-
+// Generates a random lowercase character
 function getRandomUpper() {
-  var getRandomUpper = String.fromCharCode(Math.floor(Math.random() * 26 + 65));
+  var getRandomUpper =String.fromCharCode(Math.floor(Math.random() * 26 + 65));
   upperCase = getRandomUpper;
   return upperCase;
 };
 
+// Generates a random lowercase character
 function getRandomNumber() {
   var getRandomNumber = String.fromCharCode(Math.floor(Math.random() * 10 + 48));
   numeric = getRandomNumber;
  return numeric; 
 };
 
+// Generates a random lowercase character
 function getRandomSymbol() {
-  var symbolRandom = " ";
-  const symbols = "!@#$%^&*(){}[]=<>/,.";
+  var length = 1
+  var charset = "!@#$%^&*(){}[]=<>/,.";
+  symbolRandom = "";
   
-  for (var i = 0; i < 5; i++)
-  symbolRandom += symbols.charAt(Math.floor(Math.random() * symbols.length));
-   symbolRandom = symbols;
-   console.log(symbolRandom);
-   return symbolRandom;
+  for (var i = 0, n = charset.length; i < length; ++i) {
+    symbolRandom += charset.charAt(Math.floor(Math.random() * n));
+}
+return symbolRandom;
 } ;
-
+//  MAIN FUNCTION
 function passGen() {
   var promptPassGen = confirm("Would you like to generate a new password");
   console.log(promptPassGen);
@@ -55,17 +56,17 @@ function passGen() {
  };
 };
 
-passGen();
-getRandomLower();
-getRandomUpper();
-getRandomNumber();
+//passGen();
+//getRandomLower();
+//getRandomUpper();
+//getRandomNumber();
 getRandomSymbol();
 //console.log(passLength);
 console.log(lowerCase);
 console.log(upperCase);
 console.log(numeric);
 console.log(symbolRandom);
-
+console.log(randomFunc[0]);
 
 
 
