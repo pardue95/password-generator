@@ -4,6 +4,8 @@ var lowerCase = " ";
 var upperCase = " ";
 var numeric = " ";
 var symbolRandom = " ";
+var choices = " ";
+var passCond = " ";
 var generateBtn = document.querySelector("#generate");
 
 // const randomFunc = {
@@ -40,11 +42,12 @@ function getRandomSymbol() {
 	var charset = "!@#$%^&*(){}[]=<>/,.";
 	symbolRandom = "";
   var getRandomSymbol = confirm("Would you like to add symbols?");
-  if (getRandomSymbol === false) { 
-    return;} else 
-    {for (var i = 0, n = charset.length; i < length; ++i) {
-      symbolRandom += charset.charAt(Math.floor(Math.random() * n))
-    } return symbolRandom} 
+  if (getRandomSymbol === true) {for (var i = 0, n = charset.length; i < length; ++i) {
+    symbolRandom += charset.charAt(Math.floor(Math.random() * n));
+      var choice = "Symbols";
+    choices = choices.concat(choice)}
+    
+  }
 
 };
 
@@ -59,28 +62,30 @@ function passGen() {
 	if (promptPassGen === true) {
 		var selectLength = prompt("How long do you want your password to be? Please choose a number between 8 and 128.");
 //	console.log(selectLength);
-		if (selectLength < 8 || selectLength > 128) {
-			alert("You must choose a number between 8 and 128!");
-			return false;
-		} else {
+		// if (selectLength < 8 || selectLength > 128) {
+		// 	alert("You must choose a number between 8 and 128!");
+		// 	return false;
+		// } else {
     passLength = selectLength;
-      return };
+      return passLength;
 	};
+
 };
 
 function generatePassword() {
   passGen();
   console.log(passLength);
-  getRandomSymbol()
-  console.log(symbolRandom);  
-  getRandomUpper();
-getRandomNumber()
-getRandomSymbol();
-// console.log(passLength);
+getRandomSymbol()
+console.log(choices);
+//   console.log(symbolRandom);  
+//   getRandomUpper();
+// getRandomNumber()
+// getRandomSymbol();
+// // console.log(passLength);
 // console.log(lowerCase);
 // console.log(upperCase);
 // console.log(numeric);
-// console.log(symbolRandom);
+
 // console.log(passLength);
 };
 
