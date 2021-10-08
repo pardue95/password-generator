@@ -6,6 +6,8 @@ var numeric = " ";
 var symbolRandom = " ";
 var choices = " ";
 var passCond = " ";
+var selectedchar;
+var newPass = " ";
 var generateBtn = document.querySelector("#generate");
 
 var alphaUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
@@ -27,12 +29,12 @@ function getRandomLower() {
 	if (getRandomLower === true) {
 		var choice = "lower case letters   "
 		choices = choices.concat(choice);
-		passCond = passCond.concat(lowerCase);
+		passCond = passCond.concat(alphaLower);
 	} else { 
 		passCond = passCond	}
 
 };
-
+console.log(passCond)
 // Generates a random uppercase character
 function getRandomUpper() {
 	//first attempt
@@ -84,7 +86,30 @@ function getRandomSymbol() {
 };
 
 
-// git checko
+// function to generate password
+
+function createPass () {
+	for (var i=0; i < passLength; i++) {
+		var newPassString = passCond.toString();
+		var noComma = newPassString.replace(/,/g, "")
+		var noSpace = noComma.replace(/\s/g,"");
+		var pen = noSpace.length;
+		console.log(pen);
+		console.log(noSpace);
+		//string with all the selected criteria was randomnly generated using the Math.floor
+		selectedchar = noSpace[Math.floor(Math.random() * pen)];
+		console.log (selectedchar);
+		newPass = newPass.concat(selectedchar);
+
+
+
+};
+};
+//USer alert to show choices made
+function selectedCriteria() {
+	console.log(choices);
+	alert("You select the following: " + choices);
+  };
 
 
 //  MAIN FUNCTION
@@ -111,8 +136,12 @@ function generatePassword() {
   getRandomNumber();
   console.log(passLength);
 getRandomSymbol()
-console.log(choices);
+createPass();
+selectedCriteria();
 
+
+// console.log(choices);
+console.log(newPass)
 //   console.log(symbolRandom);  
 //   getRandomUpper();
 // getRandomNumber()
@@ -120,10 +149,21 @@ console.log(choices);
 // // console.log(passLength);
 // console.log(lowerCase);
 // console.log(upperCase);
-// console.log(numeric);
-console.log(passCond);
+// // console.log(numeric);
+// console.log(passCond);
 // console.log(passLength);
+window.alert(newPass)
+passCond = ""
 };
+
+// Write password to the #password input
+function writePassword() {
+	password = generatePassword();
+	var passwordText = document.querySelector("#password");
+  
+	passwordText.value = password;
+  
+  }
 
 
 generateBtn.addEventListener("click", function () {
