@@ -45,7 +45,7 @@ function getRandomUpper() {
     //socond attempt
     var getRandomUpper = confirm("Would you like to add uppercase letters?")
     if (getRandomUpper === true) {
-        var choice = "upper case letters	"
+        var choice = "upper case letters     "
         choices = choices.concat(choice);
         passCond = passCond.concat(alphaUpper);
     } else {
@@ -62,7 +62,7 @@ function getRandomNumber() {
     //second attempt
     var getRandomNumber = confirm("Would you like to add numbers?")
     if (getRandomNumber === true) {
-        var choice = "numbers	"
+        var choice = "numbers     "
         choices = choices.concat(choice);
         passCond = passCond.concat(numeric);
     } else {
@@ -79,7 +79,7 @@ function getRandomSymbol() {
     if (getRandomSymbol === true) {
         // for (var i = 0, n = charset.length; i < length; ++i) {
         //     symbolRandom += charset.charAt(Math.floor(Math.random() * n));
-            var choice = "Symbols	";
+            var choice = "Symbols     ";
 			passCond = passCond.concat(symbols);
         } else {
 			passCond = passCond;
