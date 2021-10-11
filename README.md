@@ -6,7 +6,7 @@ This is a password generator that creates a random password.  Users can select t
 <https://pardue95.github.io/password-generator/>
 
 ## Github repository
-<https://github.com/pardue95>
+<https://github.com/pardue95/password-generator>
 
 ![image](https://user-images.githubusercontent.com/85760640/136726438-346e5797-13be-40d5-854b-cb22534c33bb.png)
 
