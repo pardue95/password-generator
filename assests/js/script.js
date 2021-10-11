@@ -45,7 +45,7 @@ function getRandomUpper() {
     //socond attempt
     var getRandomUpper = confirm("Would you like to add uppercase letters?")
     if (getRandomUpper === true) {
-        var choice = "upper case letters	"
+        var choice = "upper case letter     "
         choices = choices.concat(choice);
         passCond = passCond.concat(alphaUpper);
     } else {
@@ -62,7 +62,7 @@ function getRandomNumber() {
     //second attempt
     var getRandomNumber = confirm("Would you like to add numbers?")
     if (getRandomNumber === true) {
-        var choice = "numbers	"
+        var choice = "number     "
         choices = choices.concat(choice);
         passCond = passCond.concat(numeric);
     } else {
@@ -79,7 +79,7 @@ function getRandomSymbol() {
     if (getRandomSymbol === true) {
         // for (var i = 0, n = charset.length; i < length; ++i) {
         //     symbolRandom += charset.charAt(Math.floor(Math.random() * n));
-            var choice = "Symbols	";
+            var choice = "Symbol    ";
 			passCond = passCond.concat(symbols);
         } else {
 			passCond = passCond;
@@ -127,11 +127,12 @@ function passGen() {
     if (promptPassGen === true) {
         var selectLength = prompt("How long do you want your password to be? Please choose a number between 8 and 128.");
         //	console.log(selectLength);
-        // if (selectLength < 8 || selectLength > 128)
-        // 	return false;
-        // } else {
+        if (selectLength < 8 || selectLength > 128 || typeof selectLength === 'number')
+        var invalid = alert("You must pick a number between 8 and 128!")
+        return false}
+     else  {
         passLength = selectLength;
-        return passLength;
+        return passLength; 
     };
 
 };
